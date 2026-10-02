@@ -1,0 +1,8 @@
+{
+  "name": "KRED v2",
+  "description": "Premium creator campaign platform to discover vetted mobile apps, join performance-based install campaigns, track earnings, and share with audiences.",
+  "requestFramePermissions": [],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}

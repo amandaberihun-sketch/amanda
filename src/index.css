@@ -1,0 +1,118 @@
+@import "tailwindcss";
+
+@layer base {
+  :root {
+    /* Fonts */
+    --font-sans: "Inter", "SF Pro Text", system-ui, -apple-system, "Segoe UI", sans-serif;
+    --font-serif: "Source Serif 4", Georgia, serif;
+    --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+
+    /* KRED Original Design System Palette matching Screenshot */
+    --bg: #141416;
+    --surface: #1e1e22;
+    --surface-raised: #28282d;
+    --hover: #29292e;
+    --active: #323238;
+    --border: rgba(255, 255, 255, 0.07);
+    --border-strong: rgba(255, 255, 255, 0.12);
+    --line: rgba(255, 255, 255, 0.07);
+    
+    --t1: #ffffff;
+    --t2: #8e8e93;
+    --t3: #636366;
+    --inv: #ffffff;
+    --ton: #141416;
+    
+    --blue: #1a8cff;
+    --blue-h: #3d9eff;
+    --blue-p: #1478db;
+    --conf: #1b5a8f;
+    --conf-t: #e6f1fb;
+    --ring: #6db8ff;
+    --overlay: rgba(0, 0, 0, 0.65);
+
+    color-scheme: dark;
+  }
+
+  /* Temporary / Quick Low-Light OLED Pure Black Mode */
+  [data-oled="true"] {
+    --bg: #000000;
+    --surface: #0e0e0e;
+    --surface-raised: #181818;
+    --hover: #1e1e1e;
+    --active: #282828;
+    --border: rgba(255, 255, 255, 0.08);
+    --border-strong: rgba(255, 255, 255, 0.16);
+    --line: rgba(255, 255, 255, 0.08);
+    
+    --t1: #f5f5f5;
+    --t2: #999999;
+    --t3: #666666;
+    --inv: #ffffff;
+    --ton: #000000;
+
+    --blue: #258cfb;
+    --blue-h: #4da3fc;
+    --conf: #132b47;
+    --conf-t: #dbeafe;
+    --overlay: rgba(0, 0, 0, 0.85);
+
+    color-scheme: dark;
+  }
+}
+
+html {
+  min-height: 100%;
+  background-color: var(--bg);
+  color: var(--t1);
+  font-family: var(--font-sans);
+  scroll-behavior: smooth;
+  scroll-padding-top: 72px;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background-color: var(--bg);
+  color: var(--t1);
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Tabular numerals for telemetry and stats */
+.tabular-nums {
+  font-variant-numeric: tabular-nums;
+}
+
+/* Focus styles */
+:focus-visible {
+  outline: 2px solid var(--ring);
+  outline-offset: 2px;
+}
+
+/* Custom subtle scrollbar */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: transparent;
+}
+::-webkit-scrollbar-thumb {
+  background: var(--line);
+  border-radius: 9999px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--t3);
+}
+
+@keyframes pop {
+  0% { transform: scale(0.94); opacity: 0; }
+  100% { transform: scale(1); opacity: 1; }
+}
+
+@keyframes rise {
+  0% { transform: translateY(10px); opacity: 0; }
+  100% { transform: translateY(0); opacity: 1; }
+}
